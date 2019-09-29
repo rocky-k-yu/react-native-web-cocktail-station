@@ -67,7 +67,7 @@ react-native-web is the most mature project, comparing with ReactXP etc
   yarn workspace mobile start
   ```
 3. Open a bash for launch native IDE
-  0. Additional first launch procedure
+  1. Additional first launch procedure
     ```sh
     cd packages/mobile/ios
     pod install
