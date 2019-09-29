@@ -55,3 +55,117 @@ react-native-web is the most mature project, comparing with ReactXP etc
 +package.json
 +tsconfig.base.json
 +tsconfig.json
+```
+
+## How to start development
+1. Open a bash for web
+  ```sh
+  yarn workspace web start
+  ```
+2. Open a bash for mobile serving
+  ```sh
+  yarn workspace mobile start
+  ```
+3. Open a bash for launch native IDE
+  0. Additional first launch procedure
+    ```sh
+    cd packages/mobile/ios
+    pod install
+    cd -
+    ```
+  1. launch XCode by `yarn xcode`
+  2. Press run button, await until simulator launched
+  3. launch Android studio
+  4. Press run button, await until simulator launched
+4. Enjoy
+
+## How to create a new microservice
+1. Find a name
+  1. `common-kebab-cased-service-name` for each service
+    - identity-access-management
+    - e-commerce
+    - mobile-ordering
+    - claim-history
+    - make-a-claim
+  2. `native-kebab-cased-service-name` for platform-specific service
+    - virtual-reality
+    - vitality-meter
+2. Make directory on project root
+  ```sh
+  mkdir -p packages/common-identity-access-management/src
+  touch packages/common-identity-access-management/package.json
+  touch packages/common-identity-access-management/tsconfig.json
+  touch packages/common-identity-access-management/.gitignore
+  ```
+3. Edit service's `package.json`
+  ```json
+  {
+    "name": "@emma-services/common-identity-access-management",
+    "version": "0.0.1",
+    "private": true
+  }
+  ```
+4. Create `App.tsx` under service's `./src`
+5. Edit service's `tsconfig.json`
+  ```json
+  {
+    "extends": "../../tsconfig.base.json",
+    "compilerOptions": {
+      "composite": true,
+      "declaration": true,
+      "emitDeclarationOnly": true,
+      "isolatedModules": false,
+      "outDir": "dist",
+      "rootDir": "src",
+      "typeRoots": [
+        "@types",
+        "../../node_modules/@types"
+      ]
+    },
+
+    "references": [
+      {
+        "path": "../common"
+      }
+    ]
+  }
+  ```
+6. Edit service's `.gitignore`
+  ```
+  *.jsbundle
+  *.tsbuildinfo
+  .DS_Store
+  .history
+  .jest
+  .vscode
+  build
+  coverage
+  dist
+  node_modules
+  npm-debug.log*
+  yarn-debug.log*
+  yarn-error.log* 
+  ```
+8. Link microservice workspace
+  ```
+  yarn
+  ```
+7. Link mobile project by editting `packages/mobile/package.json`
+  ```json
+  {
+    "dependencies": {
+      "@emma-services/common": "0.0.1",
+      "@emma-services/common-identity-access-management": "0.0.1",
+    }
+  }
+  ```
+8. Link web project by editting `packages/web/config-overrides.js`
+  ```js
+  const appIncludes = [
+    resolveApp('src'),
+    resolveApp('../components/src'),
+    // SERVICES
+    resolveApp('../common/src'),
+    resolveApp('../common-identity-access-management/src'),
+  ]
+  ```

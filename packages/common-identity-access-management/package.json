@@ -1,5 +1,5 @@
 {
-    "name": "@emma-services/serv-identity-access-management",
+    "name": "@emma-services/common-identity-access-management",
     "version": "0.0.1",
     "private": true,
     "dependencies": {
