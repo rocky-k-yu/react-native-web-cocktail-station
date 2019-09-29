@@ -1,0 +1,8 @@
+{
+    "name": "@emma-services/serv-identity-access-management",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "lodash": "^4.17.15"
+    }
+}

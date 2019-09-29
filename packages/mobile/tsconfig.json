@@ -14,6 +14,12 @@
   "references": [
     {
       "path": "../components"
+    },
+    {
+      "path": "../common"
+    },
+    {
+      "path": "../common-identity-access-management"
     }
   ]
 }

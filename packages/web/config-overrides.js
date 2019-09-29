@@ -9,6 +9,9 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 const appIncludes = [
   resolveApp('src'),
   resolveApp('../components/src'),
+  // SERVICES
+  resolveApp('../common/src'),
+  resolveApp('../common-identity-access-management/src'),
 ]
 
 module.exports = function override(config, env) {
