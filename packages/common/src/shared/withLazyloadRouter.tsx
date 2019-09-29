@@ -7,10 +7,12 @@ const LoadingScreen = (props: any) => <Text>loading...</Text>;
 
 const withLazyloadRouterImpl = (Component: React.ComponentType) => {
   const MiniAppScreen = (props: any) => {
-    console.log('withLazyloadScreenImpl', props)
-    return (<Suspense fallback={LoadingScreen}>
-    <Component {...props}/>
-  </Suspense>)
+    return (
+      <Suspense fallback={LoadingScreen}>
+        <Component {...props}/>
+        {/* {Component(props)} */}
+      </Suspense>
+    )
   }
   return MiniAppScreen;
 }
