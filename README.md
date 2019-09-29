@@ -59,14 +59,17 @@ react-native-web is the most mature project, comparing with ReactXP etc
 
 ## How to start development
 1. Open a bash for web
+  
   ```sh
   yarn workspace web start
   ```
 2. Open a bash for mobile serving
+  
   ```sh
   yarn workspace mobile start
   ```
 3. Open a bash for launch native IDE
+  
   1. Additional first launch procedure
     ```sh
     cd packages/mobile/ios
@@ -81,16 +84,21 @@ react-native-web is the most mature project, comparing with ReactXP etc
 
 ## How to create a new microservice
 1. Find a name
-  1. `common-kebab-cased-service-name` for each service
-    - identity-access-management
-    - e-commerce
-    - mobile-ordering
-    - claim-history
-    - make-a-claim
-  2. `native-kebab-cased-service-name` for platform-specific service
-    - virtual-reality
-    - vitality-meter
+
+	-  `common-kebab-cased-service-name` for each service
+
+		- identity-access-management
+		- e-commerce
+		- mobile-ordering
+		- claim-history
+		- make-a-claim
+
+	-  `native-kebab-cased-service-name` for platform-specific service
+
+		- virtual-reality
+		- vitality-meter
 2. Make directory on project root
+
   ```sh
   mkdir -p packages/common-identity-access-management/src
   touch packages/common-identity-access-management/package.json
@@ -98,6 +106,7 @@ react-native-web is the most mature project, comparing with ReactXP etc
   touch packages/common-identity-access-management/.gitignore
   ```
 3. Edit service's `package.json`
+
   ```json
   {
     "name": "@emma-services/common-identity-access-management",
@@ -107,6 +116,7 @@ react-native-web is the most mature project, comparing with ReactXP etc
   ```
 4. Create `App.tsx` under service's `./src`
 5. Edit service's `tsconfig.json`
+
   ```json
   {
     "extends": "../../tsconfig.base.json",
@@ -131,6 +141,7 @@ react-native-web is the most mature project, comparing with ReactXP etc
   }
   ```
 6. Edit service's `.gitignore`
+
   ```
   *.jsbundle
   *.tsbuildinfo
@@ -147,10 +158,12 @@ react-native-web is the most mature project, comparing with ReactXP etc
   yarn-error.log* 
   ```
 8. Link microservice workspace
+
   ```
   yarn
   ```
 7. Link mobile project by editting `packages/mobile/package.json`
+
   ```json
   {
     "dependencies": {
@@ -160,6 +173,7 @@ react-native-web is the most mature project, comparing with ReactXP etc
   }
   ```
 8. Link web project by editting `packages/web/config-overrides.js`
+  
   ```js
   const appIncludes = [
     resolveApp('src'),
