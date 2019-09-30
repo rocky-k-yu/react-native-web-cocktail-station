@@ -58,6 +58,14 @@ react-native-web is the most mature project, comparing with ReactXP etc
 ```
 
 ## How to start development
+1. Install dependency after `git clone`
+
+  ```sh
+  yarn
+  cd packages/mobile/ios
+  pod install
+  cd -
+  ```
 1. Open a bash for web
   
   ```sh
