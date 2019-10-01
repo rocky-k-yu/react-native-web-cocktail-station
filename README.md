@@ -29,43 +29,45 @@ Comparing with ReactXP, react-native-web is the most mature project.
 ## Understand the folder structure
 ```
 /
-+packages/
-|+common/
-||+src/
-|||+routes/
-||||+XXXScreen.tsx                     // One-page screen
-||||+XXXRouter.tsx                     // Nested router
-|||+shared/
-||||+index.ts                          // shared [methods](docs/methods) 
-|||+App.tsx                            // Main App Router
-|||+declare_modules.d.ts
-||+package.json
-||+tsconfig.json
-|+common-[awesome-micro-services]/
-||+src/
-|||+routes/
-||||+XXXScreen.tsx
-||||+XXXRouter.tsx
-|||+App.tsx                            // MiniApp Router
-||+package.json
-||+tsconfig.json
-|+components                           // Original reuseable components from brunolemos
-|+mobile/
-||+android/
-||+ios/
-||+index.js                            // AppRegistry.registerComponent
-||+package.json                        // Dependency, including MiniApp, for mobile
-||+tsconfig.json                       // Dependency, including MiniApp, for mobile
-|+web/
-||+public/                             // static asset for web template
-||+src/
-|||+index.tsx                          // AppRegistry.registerComponent
-||+.env                                // Build config
-||+package.json
-||+tsconfig.json
-+package.json
-+tsconfig.base.json
-+tsconfig.json
++-packages/
+| +-common/
+| | +-src/
+| | | +-routes/
+| | | | +-XXXScreen.tsx                   // One-page screen
+| | | | +-XXXRouter.tsx                   // Nested router
+| | | +-shared/
+| | | | +-index.ts                        // shared [methods](docs/methods) 
+| | | +-App.tsx                           // Main App Router
+| | | +-declare_modules.d.ts
+| | +-package.json
+| | +-tsconfig.json
+| +-common-[awesome-micro-services]/
+| | +-src/
+| | | +-mod-login/                        // User-journey A
+| | | | +-components
+| | | | +-routes/
+| | | +-mod-logout/                       // User-journey B
+| | | +-mod-forget-password/              // User-journey C
+| | | +-App.tsx                           // To-be exposed MiniApp Router
+| | +-package.json
+| | +-tsconfig.json
+| +-components                            // Original reuseable components from brunolemos
+| +-mobile/
+| | +-android/
+| | +-ios/
+| | +-index.js                            // AppRegistry.registerComponent
+| | +-package.json                        // Dependency, including MiniApp, for mobile
+| | +-tsconfig.json                       // Dependency, including MiniApp, for mobile
+| +- web/
+| | +-public/                             // static asset for web template
+| | +-src/
+| | | +-index.tsx                         // AppRegistry.registerComponent
+| | +-.env                                // Build config
+| | +-package.json
+| | +-tsconfig.json
++-package.json
++-tsconfig.base.json
++-tsconfig.json
 ```
 
 ## How to start development
@@ -126,25 +128,24 @@ Comparing with ReactXP, react-native-web is the most mature project.
 3. Edit service's `tsconfig.json`
     ```json
     {
-    "extends": "../../tsconfig.base.json",
-    "compilerOptions": {
-      "composite": true,
-      "declaration": true,
-      "emitDeclarationOnly": true,
-      "isolatedModules": false,
-      "outDir": "dist",
-      "rootDir": "src",
-      "typeRoots": [
-        "@types",
-        "../../node_modules/@types"
+      "extends": "../../tsconfig.base.json",
+      "compilerOptions": {
+        "composite": true,
+        "declaration": true,
+        "emitDeclarationOnly": true,
+        "isolatedModules": false,
+        "outDir": "dist",
+        "rootDir": "src",
+        "typeRoots": [
+          "@types",
+          "../../node_modules/@types"
+        ]
+      },
+      "references": [
+        {
+          "path": "../common"
+        }
       ]
-    },
-
-    "references": [
-      {
-        "path": "../common"
-      }
-    ]
     }
     ```
 4. Edit service's `.gitignore`
