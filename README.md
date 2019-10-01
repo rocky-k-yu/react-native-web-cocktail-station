@@ -72,22 +72,24 @@ Comparing with ReactXP, react-native-web is the most mature project.
 1. Install dependency after `git clone`
 
   ```sh
+  git remote rename origin template
   yarn
   cd packages/mobile/ios
   pod install
   cd -
+  git remote add origin [your-project-git-repo]
   ```
-1. Open a bash for web
+2. Open a bash for web
   
   ```sh
   yarn workspace web start
   ```
-2. Open a bash for mobile serving
+3. Open a bash for mobile serving
   
   ```sh
   yarn workspace mobile start
   ```
-3. Open a bash for launch native IDE
+4. Open a bash for launch native IDE
   
   1. Additional first launch procedure
     ```sh
@@ -99,32 +101,34 @@ Comparing with ReactXP, react-native-web is the most mature project.
   2. Press run button, await until simulator launched
   3. launch Android studio
   4. Press run button, await until simulator launched
-4. Enjoy
+5. Enjoy
 
-## How to create a new microservice
-1. Find a name
+## How to create a new microservice 
+### Example
+- `common-identity-access-management` is the folder name for this new microservice
+- `@emma-services/common-identity-access-management` is the package name, 
+  - while @emma-services is the namespace of this service.
+- Barista should create her own name.
+  -  `common-kebab-cased-service-name` for each service
+    - identity-access-management
+    - e-commerce
+    - mobile-ordering
+    - claim-history
+    - make-a-claim
 
-	-  `common-kebab-cased-service-name` for each service
-
-		- identity-access-management
-		- e-commerce
-		- mobile-ordering
-		- claim-history
-		- make-a-claim
-
-	-  `native-kebab-cased-service-name` for platform-specific service
-
-		- virtual-reality
-		- vitality-meter
-2. Make directory on project root
+  -  `native-kebab-cased-service-name` for platform-specific service
+    - virtual-reality
+    - step-counter
+    
+### Steps
+1. Make directory on project root
 
   ```sh
-  mkdir -p packages/common-identity-access-management/src
-  touch packages/common-identity-access-management/package.json
-  touch packages/common-identity-access-management/tsconfig.json
-  touch packages/common-identity-access-management/.gitignore
+  mkdir -p packages/common-identity-access-management/ && cd "$_"
+  mkdir src
+  touch package.json tsconfig.json .gitignore src/App.tsx
   ```
-3. Edit service's `package.json`
+2. Edit service's `package.json`
 
   ```json
   {
@@ -133,8 +137,7 @@ Comparing with ReactXP, react-native-web is the most mature project.
     "private": true
   }
   ```
-4. Create `App.tsx` under service's `./src`
-5. Edit service's `tsconfig.json`
+3. Edit service's `tsconfig.json`
 
   ```json
   {
@@ -159,7 +162,7 @@ Comparing with ReactXP, react-native-web is the most mature project.
     ]
   }
   ```
-6. Edit service's `.gitignore`
+4. Edit service's `.gitignore`
 
   ```
   *.jsbundle
@@ -176,12 +179,12 @@ Comparing with ReactXP, react-native-web is the most mature project.
   yarn-debug.log*
   yarn-error.log* 
   ```
-8. Link microservice workspace
+5. Link microservice workspace
 
   ```
   yarn
   ```
-7. Link mobile project by editting `packages/mobile/package.json`
+6. Link mobile project by editting `packages/mobile/package.json`
 
   ```json
   {
@@ -191,7 +194,7 @@ Comparing with ReactXP, react-native-web is the most mature project.
     }
   }
   ```
-8. Link web project by editting `packages/web/config-overrides.js`
+7. Link web project by editting `packages/web/config-overrides.js`
   
   ```js
   const appIncludes = [
