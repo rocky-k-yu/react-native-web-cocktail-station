@@ -6,8 +6,11 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
 
 ## Why I choose this name?
 Having a coffee bench is a cool thing in a workplace for coders.
+
 A barista who is standing behind her bench can utilise a limited number of ingredients to produce magical beverages.
+
 Meanwhile, developers who are using yarn-workspace can combine self-sustained modules to produce amazing applications.
+
 I am sure you can see the light here.
 
 ## Why I choose React Router?
@@ -15,11 +18,13 @@ My teammates in my former company and current company love it.
 
 ## Why I choose Monorepo?
 I need code management in microservice approach.
+
 I need rampant code reuse.
 
 ## Why I choose react-native-web?
-I see the future of ReactJS is limited. React native is the framework allowing cross-platform coding.
-react-native-web is the most mature project, comparing with ReactXP etc
+I see the limitation of ReactJS in future, while ReactNative accompanied by Metro and Expo is now paving the path to allow cross-platform coding.
+
+Comparing with ReactXP, react-native-web is the most mature project.
 
 ## Understand the folder structure
 ```
