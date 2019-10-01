@@ -83,22 +83,14 @@ Comparing with ReactXP, react-native-web is the most mature project.
     yarn workspace web start
     ```
 3. Open a bash for mobile serving
-  
-  ```sh
-  yarn workspace mobile start
-  ```
-4. Open a bash for launch native IDE
-  
-  1. Additional first launch procedure
     ```sh
-    cd packages/mobile/ios
-    pod install
-    cd -
+    yarn workspace mobile start
     ```
-  1. launch XCode by `yarn xcode`
-  2. Press run button, await until simulator launched
-  3. launch Android studio
-  4. Press run button, await until simulator launched
+4. Open a bash for launch native IDE
+    1. launch XCode by `yarn xcode`
+    2. Press run button, await until simulator launched
+    3. launch Android studio by `yarn studio`
+    4. Press run button, await until simulator launched
 5. Enjoy
 
 ## How to create a new microservice 
@@ -118,14 +110,12 @@ Comparing with ReactXP, react-native-web is the most mature project.
     
 ### Steps
 1. Make directory on project root
-
     ```sh
     mkdir -p packages/common-identity-access-management/ && cd "$_"
     mkdir src
     touch package.json tsconfig.json .gitignore src/App.tsx
     ```
 2. Edit service's `package.json`
-
     ```json
     {
       "name": "@emma-services/common-identity-access-management",
@@ -134,9 +124,8 @@ Comparing with ReactXP, react-native-web is the most mature project.
     }
     ```
 3. Edit service's `tsconfig.json`
-
-  ```json
-  {
+    ```json
+    {
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
       "composite": true,
@@ -156,48 +145,44 @@ Comparing with ReactXP, react-native-web is the most mature project.
         "path": "../common"
       }
     ]
-  }
-  ```
-4. Edit service's `.gitignore`
-
-  ```
-  *.jsbundle
-  *.tsbuildinfo
-  .DS_Store
-  .history
-  .jest
-  .vscode
-  build
-  coverage
-  dist
-  node_modules
-  npm-debug.log*
-  yarn-debug.log*
-  yarn-error.log* 
-  ```
-5. Link microservice workspace
-
-  ```
-  yarn
-  ```
-6. Link mobile project by editting `packages/mobile/package.json`
-
-  ```json
-  {
-    "dependencies": {
-      "@emma-services/common": "0.0.1",
-      "@emma-services/common-identity-access-management": "0.0.1",
     }
-  }
-  ```
+    ```
+4. Edit service's `.gitignore`
+    ```
+    *.jsbundle
+    *.tsbuildinfo
+    .DS_Store
+    .history
+    .jest
+    .vscode
+    build
+    coverage
+    dist
+    node_modules
+    npm-debug.log*
+    yarn-debug.log*
+    yarn-error.log* 
+    ```
+5. Link microservice workspace
+    ```
+    yarn
+    ```
+6. Link mobile project by editting `packages/mobile/package.json`
+    ```json
+    {
+        "dependencies": {
+          "@emma-services/common": "0.0.1",
+          "@emma-services/common-identity-access-management": "0.0.1",
+        }
+    }
+    ```
 7. Link web project by editting `packages/web/config-overrides.js`
-  
-  ```js
-  const appIncludes = [
-    // Main App
-    resolveApp('src'),
-    // Mini App
-    resolveApp('../common/src'),
-    resolveApp('../common-identity-access-management/src'),
-  ]
-  ```
+    ```js
+    const appIncludes = [
+        // Main App
+        resolveApp('src'),
+        // Mini App
+        resolveApp('../common/src'),
+        resolveApp('../common-identity-access-management/src'),
+    ]
+    ```
