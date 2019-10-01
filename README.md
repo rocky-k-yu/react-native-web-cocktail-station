@@ -22,9 +22,15 @@ I need code management in microservice approach.
 I need rampant code reuse.
 
 ## Why I choose react-native-web?
-I see the limitation of ReactJS in future, while ReactNative accompanied by Metro and Expo is now paving the path to allow cross-platform coding.
+I see the limitation of ReactJS in future
+- Idea of ReactJS is amazing. We manipulate the virtual dom and the rendering logic will be handled by ReactJS
+- Yet, the abstraction of virtual dom is still not adequate, leaving its syntax too sticky to HTML
 
-Comparing with ReactXP, react-native-web is the most mature project.
+Meanwhile, ReactNative, accompanied by Metro and Expo, is now paving the path to allow cross-platform coding.
+
+In short ReactNative is a framework, while I can only regard ReactJS as a library.
+
+In the ecosystem of ReactNative, react-native-web is the most mature project.
 
 ## Understand the folder structure
 ```
