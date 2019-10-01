@@ -70,20 +70,18 @@ Comparing with ReactXP, react-native-web is the most mature project.
 
 ## How to start development
 1. Install dependency after `git clone`
-
-  ```sh
-  git remote rename origin template
-  yarn
-  cd packages/mobile/ios
-  pod install
-  cd -
-  git remote add origin [your-project-git-repo]
-  ```
+    ```sh
+    git remote rename origin template
+    yarn
+    cd packages/mobile/ios
+    pod install
+    cd -
+    git remote add origin [your-project-git-repo]
+    ```
 2. Open a bash for web
-  
-  ```sh
-  yarn workspace web start
-  ```
+    ```sh
+    yarn workspace web start
+    ```
 3. Open a bash for mobile serving
   
   ```sh
@@ -106,37 +104,35 @@ Comparing with ReactXP, react-native-web is the most mature project.
 ## How to create a new microservice 
 ### Example
 - `common-identity-access-management` is the folder name for this new microservice
-- `@emma-services/common-identity-access-management` is the package name, 
-  - while @emma-services is the namespace of this service.
+- `@emma-services/common-identity-access-management` is the package name, whil 
+    - `@emma-services` is the common namespace of this bench
+    - `common-identity-access-management` is the service-oriented feature
+        - The user journey of `login` 
+            - will update the ACCESS_TOKEN in `@emma-services/common`
+            - will maintain the session user_name, 2FA-PIN, etc in  `@emma-services/common-identity-access-management`
+        - The user journey of `logout`
+            - will remove the ACCESS_TOKEN in `@emma-services/common`
 - Barista should create her own name.
-  -  `common-kebab-cased-service-name` for each service
-    - identity-access-management
-    - e-commerce
-    - mobile-ordering
-    - claim-history
-    - make-a-claim
-
-  -  `native-kebab-cased-service-name` for platform-specific service
-    - virtual-reality
-    - step-counter
+    -  `common-make-a-claim` for common service
+    -  `mobile-spec-kebab-cased-service-name` for platform-specific service
     
 ### Steps
 1. Make directory on project root
 
-  ```sh
-  mkdir -p packages/common-identity-access-management/ && cd "$_"
-  mkdir src
-  touch package.json tsconfig.json .gitignore src/App.tsx
-  ```
+    ```sh
+    mkdir -p packages/common-identity-access-management/ && cd "$_"
+    mkdir src
+    touch package.json tsconfig.json .gitignore src/App.tsx
+    ```
 2. Edit service's `package.json`
 
-  ```json
-  {
-    "name": "@emma-services/common-identity-access-management",
-    "version": "0.0.1",
-    "private": true
-  }
-  ```
+    ```json
+    {
+      "name": "@emma-services/common-identity-access-management",
+      "version": "0.0.1",
+      "private": true
+    }
+    ```
 3. Edit service's `tsconfig.json`
 
   ```json
