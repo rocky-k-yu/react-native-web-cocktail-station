@@ -1,8 +1,14 @@
-# Emma monorepo
+# Barista-bench
 This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brunolemos/react-native-web-monorepo)
 - Add React router
 - Add a microservice 
 - Add asynchronous injection of the mini-app router from the microservice
+
+## Why I choose this name?
+Having a coffee bench is a cool thing in a workplace for coders.
+A barista who is standing behind her bench can utilise a limited number of ingredients to produce magical beverages.
+Meanwhile, developers who are using yarn-workspace can combine self-sustained modules to produce amazing applications.
+I am sure you can see the light here.
 
 ## Why I choose React Router?
 My teammates in my former company and current company love it.
