@@ -51,7 +51,6 @@ Comparing with ReactXP, react-native-web is the most mature project.
 | | | +-App.tsx                           // To-be exposed MiniApp Router
 | | +-package.json
 | | +-tsconfig.json
-| +-components                            // Original reuseable components from brunolemos
 | +-mobile/
 | | +-android/
 | | +-ios/
