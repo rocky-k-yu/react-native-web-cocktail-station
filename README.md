@@ -5,7 +5,7 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
 - Add asynchronous injection of the mini-app router from the microservice
 
 ## Why I choose this name?
-Having a coffee bench is a cool thing in a workplace for coders.
+Having a coffee bench is a cool thing in coder's workplace.
 
 A barista who is standing behind her bench can utilise a limited number of ingredients to produce magical beverages.
 
