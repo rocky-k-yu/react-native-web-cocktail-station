@@ -190,9 +190,9 @@ react-native-web is the most mature project, comparing with ReactXP etc
   
   ```js
   const appIncludes = [
+    // Main App
     resolveApp('src'),
-    resolveApp('../components/src'),
-    // SERVICES
+    // Mini App
     resolveApp('../common/src'),
     resolveApp('../common-identity-access-management/src'),
   ]
