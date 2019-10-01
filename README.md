@@ -57,12 +57,13 @@ Comparing with ReactXP, react-native-web is the most mature project.
 | | +-ios/
 | | +-index.js                            // AppRegistry.registerComponent
 | | +-package.json                        // Dependency, including MiniApp, for mobile
-| | +-tsconfig.json                       // Dependency, including MiniApp, for mobile
+| | +-tsconfig.json
 | +- web/
-| | +-public/                             // static asset for web template
+| | +-public/                             // static asset for web TEMPLATE (not application)
 | | +-src/
 | | | +-index.tsx                         // AppRegistry.registerComponent
 | | +-.env                                // Build config
+| | +-config-overrides.js                 // Dependency, including MiniApp, for web
 | | +-package.json
 | | +-tsconfig.json
 +-package.json
