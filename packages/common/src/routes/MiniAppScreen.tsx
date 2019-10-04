@@ -1,6 +1,6 @@
 import React from 'react';
-import {withLazyloadScreen} from '../shared';
+import { withLazyloadMiniApp } from '../shared';
 
 const MiniAppImpl = React.lazy(() => import('components/src/MiniApp'));
 
-export default withLazyloadScreen(MiniAppImpl);
+export default withLazyloadMiniApp(MiniAppImpl);

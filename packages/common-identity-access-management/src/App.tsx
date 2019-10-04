@@ -1,19 +1,19 @@
 import React from "react";
-import { Redirect, Route } from '@emma-services/common/src/shared';
+import { Route, Switch } from '@emma-services/common/src/shared';
 
-import LoginStep1 from './routes/LoginStep1';
-import LoginStep2 from './routes/LoginStep2';
-import LoginStep3 from './routes/LoginStep3';
+import LoginInputEmailAndPassword from './mod-login/routes/InputEmailAndPassword';
+import LoginInputOneTimePin from './mod-login/routes/InputOneTimePin';
+import LoginShowHints from './mod-login/routes/ShowHints';
 
-export function AppRouter(props: any){
-  const { match : { url} } = props;
+export function AppRouter(props: any) {
+  const { match: { url } } = props;
   return (
-    <>
-      <Redirect exact from={`${url}/`} to={`${url}/1`}/>
-      <Route path={`${url}/1`} component={LoginStep1} />
-      <Route path={`${url}/2`} component={LoginStep2} />
-      <Route path={`${url}/3`} component={LoginStep3} />
-    </>
+    <Switch>
+      <Route exact path={`/login/input-email-and-password`} component={LoginInputEmailAndPassword} />
+      <Route exact path={`/login/input-one-time-pin`} component={LoginInputOneTimePin} />
+      <Route exact path={`/login/show-hints`} component={LoginShowHints} />
+      <Route exact path={`/login/`} component={LoginInputEmailAndPassword} />
+    </Switch>
   )
 }
 
