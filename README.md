@@ -8,6 +8,12 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
     - Thanks to [React.Lazy](https://reactjs.org/docs/code-splitting.html) and [react-router-v4](https://reacttraining.com/react-router/)
 - Declaring core ContextProvider in MainApp allows both MiniApp and MainApp to consume the context.
     - Thanks to [React.createContext](https://reactjs.org/docs/context.html#when-to-use-context)
+    
+## Roadmap
+- Add swagger / insomnia API spec
+- Add code-gen helper
+- Add storybook as third deliverable
+- Add /docs
 
 ## Why I choose this name?
 Having a cocktail station is a cool thing in coder's workplace.
