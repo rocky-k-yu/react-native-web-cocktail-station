@@ -116,9 +116,9 @@ In the ecosystem of ReactNative, react-native-web is the most mature project.
     - `common-identity-access-management` is the folder name for this new microservice
     - `@emma-services/common-identity-access-management` is the package name
 - Bartendar should create alias for each of her package with naming convention.
-    -  **common-**making-a-claim for common service
-    -  **mobile-specific-**step-counter for mobile-specific service
-    -  **web-specific-**making-app-offline for web-specific service
+    -  **common-** making-a-claim for common service
+    -  **mobile-specific-** step-counter for mobile-specific service
+    -  **web-specific-** making-app-offline for web-specific service
     
 ### Steps
 1. Make directory on project root
