@@ -1,15 +1,18 @@
-# Barista-bench
+# React-native-web-cocktail-station
 This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brunolemos/react-native-web-monorepo)
-- Add React router
-- Add a microservice 
-- Add asynchronous injection of the mini-app router from the microservice
+- Adoption of microservice architecture. 
+    - `common-*` is MiniApp, 
+    - while MainApp is `common`.
+- Routing with `react-router` enables seamless navigation between both MiniApp and MainApp.
+- Exposing MiniApp's AppRouter enables MainApp to lazy-load a MiniApp. Thanks `React.Lazy`
+- Declaring ContextProvider (provided by `React.createContext`) in MainApp allows both MiniApp and MainApp to consume the context.
 
 ## Why I choose this name?
-Having a coffee bench is a cool thing in coder's workplace.
+Having a cocktail station is a cool thing in coder's workplace.
 
-A barista who is standing behind her bench can utilise a limited number of ingredients to produce magical beverages.
+A bartender who is standing behind her cocktail station can utilise a variety of alcohol, juice and soda to produce magical cocktails to serve one’s taste.
 
-Meanwhile, developers who are using yarn-workspace can combine self-sustained modules to produce amazing applications.
+Meanwhile, developers who are using yarn-workspace can combine self-sustained modules / microservices / miniApp to produce amazing applications to deliver content in various platforms e.g. Mobile, Web, Storybook, etc
 
 I am sure you can see the light here.
 
