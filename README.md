@@ -110,18 +110,15 @@ In the ecosystem of ReactNative, react-native-web is the most mature project.
 
 ## How to create a new microservice 
 ### Example
-- `common-identity-access-management` is the folder name for this new microservice
-- `@emma-services/common-identity-access-management` is the package name, whil 
-    - `@emma-services` is the common namespace of this bench
-    - `common-identity-access-management` is the service-oriented feature
-        - The user journey of `login` 
-            - will update the ACCESS_TOKEN in `@emma-services/common`
-            - will maintain the session user_name, 2FA-PIN, etc in  `@emma-services/common-identity-access-management`
-        - The user journey of `logout`
-            - will remove the ACCESS_TOKEN in `@emma-services/common`
-- Barista should create her own name.
-    -  `common-make-a-claim` for common service
-    -  `mobile-spec-kebab-cased-service-name` for platform-specific service
+- Assume `emma` is the bartendar. In her workspace, she will use `emma-service` as her packages' namespace.
+- Assume her deliverables include a package of features namely login, logout, forget password, etc
+    - such package (microservice / dependency) is widely perceived as identity access management, 
+    - `common-identity-access-management` is the folder name for this new microservice
+    - `@emma-services/common-identity-access-management` is the package name
+- Bartendar should create alias for each of her package with naming convention.
+    -  **common-**making-a-claim for common service
+    -  **mobile-specific-**step-counter for mobile-specific service
+    -  **web-specific-**making-app-offline for web-specific service
     
 ### Steps
 1. Make directory on project root
