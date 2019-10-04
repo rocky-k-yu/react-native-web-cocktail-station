@@ -1,11 +1,13 @@
 # React-native-web-cocktail-station
 This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brunolemos/react-native-web-monorepo)
 - Adoption of microservice architecture. 
-    - `common-*` is MiniApp, 
-    - while MainApp is `common`.
-- Routing with `react-router` enables seamless navigation between both MiniApp and MainApp.
-- Exposing MiniApp's AppRouter enables MainApp to lazy-load a MiniApp. Thanks `React.Lazy`
-- Declaring ContextProvider (provided by `React.createContext`) in MainApp allows both MiniApp and MainApp to consume the context.
+    - `common-*` are MiniApps, while
+    - MainApp is coded under `common`.
+- [Typescript](https://www.typescriptlang.org/docs/handbook/react-&-webpack.html) is in use.
+- Exposing MiniApp's AppRouter enables seamless navigation from MainApp to MiniApps. 
+    - Thanks to [React.Lazy](https://reactjs.org/docs/code-splitting.html) and [react-router-v4](https://reacttraining.com/react-router/)
+- Declaring core ContextProvider in MainApp allows both MiniApp and MainApp to consume the context.
+    - Thanks to [React.createContext](https://reactjs.org/docs/context.html#when-to-use-context)
 
 ## Why I choose this name?
 Having a cocktail station is a cool thing in coder's workplace.
@@ -19,6 +21,8 @@ I am sure you can see the light here.
 ## Why I choose React Router?
 My teammates in my former company and current company love it.
 
+Most importantly, it provides adoption to both mobile and web.
+
 ## Why I choose Monorepo?
 I need code management in microservice approach.
 
@@ -31,7 +35,7 @@ I see the limitation of ReactJS in future
 
 Meanwhile, ReactNative, accompanied by Metro and Expo, is now paving the path to allow cross-platform coding.
 
-In short ReactNative is a framework, while I can only regard ReactJS as a library.
+In short, comparing to ReactJS, which is typically regarded as rendering engine, ReactNative is the framework I need.
 
 In the ecosystem of ReactNative, react-native-web is the most mature project.
 
