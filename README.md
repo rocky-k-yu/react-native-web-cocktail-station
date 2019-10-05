@@ -10,6 +10,9 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
     - Thanks to [React.createContext](https://reactjs.org/docs/context.html#when-to-use-context)
     
 ## Roadmap
+- Add web-mobile-stitched primitives in `packages/common/src/shared/primitives`
+    - Demo stitching between [@material-ui/core](https://material-ui.com/) and [react-native-elements](https://react-native-elements.github.io/react-native-elements/);
+    - Inspired by https://github.com/cloudle/ruui
 - Add swagger / insomnia API spec
 - Add code-gen helper
 - Add storybook as third deliverable
