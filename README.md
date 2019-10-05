@@ -13,6 +13,8 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
 - Add web-mobile-stitched primitives in `packages/common/src/shared/primitives`
     - Demo stitching between [@material-ui/core](https://material-ui.com/) and [react-native-elements](https://react-native-elements.github.io/react-native-elements/);
     - Inspired by https://github.com/cloudle/ruui
+    - We will have ThemedButton, ThemedHeadline1, ThemedHeadline2, ThemedTextField, etc
+    - They are primitives to build components
 - Add swagger / insomnia API spec
 - Add code-gen helper
 - Add storybook as third deliverable
