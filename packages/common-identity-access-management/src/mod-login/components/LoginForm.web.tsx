@@ -1,7 +1,8 @@
 import React from 'react';
 import { Text } from 'react-native';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
+import ThemeButton from '@emma-services/common/src/shared/components/ThemeButton';
 
 const LoginForm = (formikProps: any) => {
   const { values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit } = formikProps;
@@ -27,12 +28,13 @@ const LoginForm = (formikProps: any) => {
       {errors.password &&
         <Text style={{ fontSize: 10, color: 'red' }}>{errors.password}</Text>
       }
-      <Button
-        variant="contained"
+
+
+      <ThemeButton
+        title='Sign in by web'
         disabled={!isValid}
-        onClick={handleSubmit}>
-        Sign in
-      </Button>
+        onClickOrPress={handleSubmit}
+      />
     </>
   )
 }

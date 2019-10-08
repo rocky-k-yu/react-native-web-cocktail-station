@@ -1,5 +1,6 @@
 import React from 'react';
 import { Input, Button, Text } from 'react-native-elements';
+import ThemeButton from '@emma-services/common/src/shared/components/ThemeButton';
 
 const LoginForm = (formikProps: any) => {
   const { values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit } = formikProps;
@@ -23,10 +24,10 @@ const LoginForm = (formikProps: any) => {
       {errors.password &&
         <Text style={{ fontSize: 10, color: 'red' }}>{errors.password}</Text>
       }
-      <Button
-        title='Sign in'
+      <ThemeButton
+        title='Sign in by mobile'
         disabled={!isValid}
-        onPress={handleSubmit}
+        onClickOrPress={handleSubmit}
       />
     </>
   )

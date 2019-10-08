@@ -20,7 +20,6 @@ type StaticProps = {
  * @param children Optional dependency injection for component reuse
  */
 export const StaticScreen: FunctionComponent<StaticProps> = ({ title, link, children }) => {
-
   return (
     <View style={styles.dummy}>
       <Text style={styles.title}>{title || "A demo of StaticScreen"}</Text>
