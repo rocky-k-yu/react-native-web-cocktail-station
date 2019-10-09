@@ -1,31 +1,32 @@
 import React from 'react';
-import { Input, Button, Text } from 'react-native-elements';
-import ThemeButton from '@emma-services/common/src/shared/components/ThemeButton';
+import ThemeTextButton from '@emma-services/common/src/shared/components/ThemeTextButton';
+import ThemeTextField from '@emma-services/common/src/shared/components/ThemeTextField';
+import ThemeText from '@emma-services/common/src/shared/components/ThemeText'
 
 const LoginForm = (formikProps: any) => {
   const { values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit } = formikProps;
   return (
     <>
-      <Input
-        label="E-mail"
+      <ThemeTextField
+        label="E-mail in"
         placeholder="example@company.com"
-        onChangeText={handleChange('email')}
+        onChange={handleChange('email')}
         onBlur={() => setFieldTouched('email')}
       />
       {errors.email &&
-        <Text style={{ fontSize: 10, color: 'red' }}>{errors.email}</Text>
+        <ThemeText style={{ fontSize: 10, color: 'red' }}>{errors.email}</ThemeText>
       }
-      <Input
+      <ThemeTextField
         label="Password"
         placeholder="1234ABC"
-        onChangeText={handleChange('password')}
+        onChange={handleChange('password')}
         onBlur={() => setFieldTouched('password')}
       />
       {errors.password &&
-        <Text style={{ fontSize: 10, color: 'red' }}>{errors.password}</Text>
+        <ThemeText style={{ fontSize: 10, color: 'red' }}>{errors.password}</ThemeText>
       }
-      <ThemeButton
-        title='Sign in by mobile'
+      <ThemeTextButton
+        title='Sign in'
         disabled={!isValid}
         onClickOrPress={handleSubmit}
       />

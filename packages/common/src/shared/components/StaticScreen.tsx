@@ -6,6 +6,9 @@ import {
   Button
 } from 'react-native';
 import { Link } from "./Routing";
+import ThemeHeadline1 from '@emma-services/common/src/shared/components/ThemeHeadline1';
+import ThemeHeadline2 from '@emma-services/common/src/shared/components/ThemeHeadline2'
+import ThemeText from '@emma-services/common/src/shared/components/ThemeText'
 
 
 type StaticProps = {
@@ -22,14 +25,16 @@ type StaticProps = {
 export const StaticScreen: FunctionComponent<StaticProps> = ({ title, link, children }) => {
   return (
     <View style={styles.dummy}>
-      <Text style={styles.title}>{title || "A demo of StaticScreen"}</Text>
+      <ThemeText style={styles.title}>{title || "A demo of StaticScreen"}</ThemeText>
       {children}
+      <ThemeHeadline1>Test H1</ThemeHeadline1>
       {link &&
         <Link
           to={link}>
-          <Text>{`Click to go ${link}`}</Text>
+          <ThemeText>{`Click to go ${link}`}</ThemeText>
         </Link>
       }
+      <ThemeHeadline2>Test H2</ThemeHeadline2>
     </View>
   )
 }

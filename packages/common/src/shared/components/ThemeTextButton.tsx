@@ -1,8 +1,8 @@
 import React, { FunctionComponent } from 'react';
 import { Button } from 'react-native-elements';
-import ThemeButtonProps from '../types/ThemeButton'
+import ThemeTextButtonProps from '../types/ThemeTextButton'
 
-export const ThemeButton: FunctionComponent<ThemeButtonProps> = ({ disabled, onClickOrPress, title }) => {
+export const ThemeTextButton: FunctionComponent<ThemeTextButtonProps> = ({ disabled, onClickOrPress, title }) => {
   return (
     <Button
       title={title}
@@ -12,4 +12,4 @@ export const ThemeButton: FunctionComponent<ThemeButtonProps> = ({ disabled, onC
   )
 }
 
-export default ThemeButton;
+export default ThemeTextButton;
