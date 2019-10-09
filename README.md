@@ -10,14 +10,18 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
     - Thanks to [React.createContext](https://reactjs.org/docs/context.html#when-to-use-context)
     
 ## Roadmap
-- Add web-mobile-stitched primitives in `packages/common/src/shared/primitives`
+- Add web-mobile-stitched primitives in `packages/common/src/shared/components` (Chris)
     - Demo stitching between [@material-ui/core](https://material-ui.com/) and [react-native-elements](https://react-native-elements.github.io/react-native-elements/);
     - Inspired by https://github.com/cloudle/ruui
     - We will have ThemedButton, ThemedHeadline1, ThemedHeadline2, ThemedTextField, etc
     - They are primitives to build components
+- Add storybook as third deliverable (Phoebe)
+- Move web-mobile-stitched primitives in `packages/base-components-mui-rne/src/components`
+    - Reusable namespace `@cocktail-helpers/base-components-mui-rne`
 - Add swagger / insomnia API spec
-- Add code-gen helper
-- Add storybook as third deliverable
+    - Demo by swagger petstore
+    - Utilize https://github.com/Manweill/swagger-axios-codegen
+    - Fork it as `@cocktail-helpers/base-codegen-swagger-axios-ts`
 - Add /docs
 
 ## Why I choose this name?
