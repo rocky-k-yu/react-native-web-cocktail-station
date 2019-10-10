@@ -23,6 +23,8 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
     - Utilize https://github.com/Manweill/swagger-axios-codegen
     - Fork it as `@cocktail-helpers/base-codegen-swagger-axios-ts`
 - Add /docs
+- Add [12factor](https://12factor.net/)
+    - Build: [react-native-config](https://github.com/luggit/react-native-config)
 
 ## Why I choose this name?
 Having a cocktail station is a cool thing in coder's workplace.
