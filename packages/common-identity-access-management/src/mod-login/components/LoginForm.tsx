@@ -16,7 +16,7 @@ const LoginForm = (formikProps: any) => {
         onBlur={() => setFieldTouched('email')}
       />
       {errors.email &&
-        <ThemeWarningMessage props= {{styles:{fontSize:10}}}>{errors.email}</ThemeWarningMessage>
+        <ThemeWarningMessage>{errors.email}</ThemeWarningMessage>
       }
       <ThemeTextField
         label="Password"
@@ -25,7 +25,7 @@ const LoginForm = (formikProps: any) => {
         onBlur={() => setFieldTouched('password')}
       />
       {errors.password &&
-        <ThemeErrorMessage props= {{styles:{fontSize:10}}}>{errors.password}</ThemeErrorMessage>
+        <ThemeErrorMessage>{errors.password}</ThemeErrorMessage>
       }
       <ThemeTextButton
         title='Sign in'

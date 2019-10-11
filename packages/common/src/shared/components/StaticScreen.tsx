@@ -24,7 +24,6 @@ type StaticProps = {
  * @param children Optional dependency injection for component reuse
  */
 export const StaticScreen: FunctionComponent<StaticProps> = ({ title, subtitle, link, children }) => {
-  if(!subtitle) subtitle = `Dummy Subtitle of ${title}` // if no subtitle
   return (
     <View style={styles.dummy}>
       <ThemeHeadline1>{title}</ThemeHeadline1>
