@@ -5,15 +5,16 @@ import {
   View,
   Button
 } from 'react-native';
-import { Link } from "./Routing";
 import ThemeHeadline1 from '@emma-services/common/src/shared/components/ThemeHeadline1';
 import ThemeHeadline2 from '@emma-services/common/src/shared/components/ThemeHeadline2'
-import ThemeText from '@emma-services/common/src/shared/components/ThemeText'
-
+import ThemeTextLink from '@emma-services/common/src/shared/components/ThemeTextLink'
+import ThemeParagraph from '@emma-services/common/src/shared/components/ThemeParagraph'
 
 type StaticProps = {
   title: string,
-  link?: string
+  subtitle?: string,
+  link?: string,
+  
 }
 
 /**
@@ -22,19 +23,17 @@ type StaticProps = {
  * @param link Optional link to next page of happy journey or expected auto redirect
  * @param children Optional dependency injection for component reuse
  */
-export const StaticScreen: FunctionComponent<StaticProps> = ({ title, link, children }) => {
+export const StaticScreen: FunctionComponent<StaticProps> = ({ title, subtitle, link, children }) => {
+  if(!subtitle) subtitle = `Dummy Subtitle of ${title}` // if no subtitle
   return (
     <View style={styles.dummy}>
-      <ThemeText style={styles.title}>{title || "A demo of StaticScreen"}</ThemeText>
+      <ThemeHeadline1>{title}</ThemeHeadline1>
+      {subtitle && <ThemeHeadline2>{subtitle}</ThemeHeadline2>}
       {children}
-      <ThemeHeadline1>Test H1</ThemeHeadline1>
       {link &&
-        <Link
-          to={link}>
-          <ThemeText>{`Click to go ${link}`}</ThemeText>
-        </Link>
+        <ThemeTextLink to={link}>{`Click to go ${link}`}</ThemeTextLink>
       }
-      <ThemeHeadline2>Test H2</ThemeHeadline2>
+      <ThemeParagraph>Text in theme paragraph</ThemeParagraph>
     </View>
   )
 }
@@ -46,10 +45,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  title: {
-    fontSize: 30,
-    fontWeight: "200"
-  }
 })
 
 export default StaticScreen;

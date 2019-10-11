@@ -2,11 +2,11 @@ import React, { FunctionComponent } from 'react';
 import TextField from '@material-ui/core/TextField';
 import ThemeTextFieldProps from '../types/ThemeTextField'
 
-export const ThemeTextField: FunctionComponent<ThemeTextFieldProps> = ({label, margin, placeholder, onChange, onBlur})=>{
+export const ThemeTextField: FunctionComponent<ThemeTextFieldProps> = ({label, placeholder, onChange, onBlur})=>{
     return(
         <TextField
         label={label}
-        margin={margin}
+        margin="dense"
         placeholder={placeholder}
         onChange={onChange}
         onBlur={onBlur}

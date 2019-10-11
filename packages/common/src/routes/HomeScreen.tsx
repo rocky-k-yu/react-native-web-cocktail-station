@@ -1,17 +1,16 @@
 import React, { useContext } from 'react';
-import { Text } from 'react-native';
-import { StaticScreen, Link } from '../shared';
+import { StaticScreen } from '../shared';
 import { Store as AdminStore } from "../context/authen";
-import ThemeText from '@emma-services/common/src/shared/components/ThemeText'
+import ThemeTextLink from '@emma-services/common/src/shared/components/ThemeTextLink'
 
 export default () => {
   const { state } = useContext(AdminStore);
   console.log('home', state)
   return (
-    <StaticScreen title="HomeScreen in MainApp" link="MiniApp">
-      <Link to="/"><ThemeText>Exit</ThemeText></Link>
+    <StaticScreen title="HomeScreen in MainApp" subtitle="Sub-HomeScreen" link="MiniApp">
+      <ThemeTextLink to="/">Exit</ThemeTextLink>
       {
-        !state.isAuth && <Link to="/login/"><ThemeText>Login Mini App</ThemeText></Link>
+        !state.isAuth && <ThemeTextLink to="/login/">Login Mini App</ThemeTextLink>
       }
     </StaticScreen >
   )

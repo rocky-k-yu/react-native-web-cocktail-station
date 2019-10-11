@@ -2,7 +2,7 @@
 type ThemeTextButtonProps = {
   disabled?: boolean,
   onClickOrPress: any,
-  title?: string
+  title: string
 }
 
 export default ThemeTextButtonProps;

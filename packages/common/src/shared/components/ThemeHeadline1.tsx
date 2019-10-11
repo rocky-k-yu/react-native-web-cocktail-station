@@ -1,13 +1,20 @@
 import React, { FunctionComponent } from 'react';
-import {Text} from 'react-native-elements'
-import ThemeHeadline1Props from '../types/ThemeHeadline1'
+import ThemeHeadlineStyles from './ThemeHeadlineStyles'
+import ThemeText from "@emma-services/common/src/shared/components/ThemeText"
 
-export const ThemeHeadline1: FunctionComponent<ThemeHeadline1Props> = ({children})=>{
+export const ThemeHeadline1: FunctionComponent = ({children})=>{
     return (
-        <Text h1>
+        <ThemeText textStyle={ThemeHeadlineStyles.h1} >
         {children}
-        </Text>
+        </ThemeText>
     )
 }
+
+// const h1Styles = StyleSheet.create({
+//     h1 :{
+//         fontSize:30,
+//         fontWeight:"200"
+//     }
+// })
 
 export default ThemeHeadline1

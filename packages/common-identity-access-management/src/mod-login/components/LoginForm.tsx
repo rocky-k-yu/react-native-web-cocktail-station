@@ -2,19 +2,21 @@ import React from 'react';
 import ThemeTextButton from '@emma-services/common/src/shared/components/ThemeTextButton';
 import ThemeTextField from '@emma-services/common/src/shared/components/ThemeTextField';
 import ThemeText from '@emma-services/common/src/shared/components/ThemeText'
+import ThemeWarningMessage from '@emma-services/common/src/shared/components/ThemeWarningMessage'
+import ThemeErrorMessage from '@emma-services/common/src/shared/components/ThemeErrorMessage'
 
 const LoginForm = (formikProps: any) => {
   const { values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit } = formikProps;
   return (
     <>
       <ThemeTextField
-        label="E-mail in"
+        label="E-mail"
         placeholder="example@company.com"
         onChange={handleChange('email')}
         onBlur={() => setFieldTouched('email')}
       />
       {errors.email &&
-        <ThemeText style={{ fontSize: 10, color: 'red' }}>{errors.email}</ThemeText>
+        <ThemeWarningMessage props= {{styles:{fontSize:10}}}>{errors.email}</ThemeWarningMessage>
       }
       <ThemeTextField
         label="Password"
@@ -23,7 +25,7 @@ const LoginForm = (formikProps: any) => {
         onBlur={() => setFieldTouched('password')}
       />
       {errors.password &&
-        <ThemeText style={{ fontSize: 10, color: 'red' }}>{errors.password}</ThemeText>
+        <ThemeErrorMessage props= {{styles:{fontSize:10}}}>{errors.password}</ThemeErrorMessage>
       }
       <ThemeTextButton
         title='Sign in'
