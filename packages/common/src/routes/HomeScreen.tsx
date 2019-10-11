@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { StaticScreen } from '../shared';
 import { Store as AdminStore } from "../context/authen";
-import ThemeTextLink from '@emma-services/common/src/shared/components/ThemeTextLink'
+import {ThemeTextLink} from '@cocktail-helpers/base-components-mui-rne/src/components';
 
 export default () => {
   const { state } = useContext(AdminStore);

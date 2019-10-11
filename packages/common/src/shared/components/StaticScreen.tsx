@@ -1,14 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
-  Button
 } from 'react-native';
-import ThemeHeadline1 from '@emma-services/common/src/shared/components/ThemeHeadline1';
-import ThemeHeadline2 from '@emma-services/common/src/shared/components/ThemeHeadline2'
-import ThemeTextLink from '@emma-services/common/src/shared/components/ThemeTextLink'
-import ThemeParagraph from '@emma-services/common/src/shared/components/ThemeParagraph'
+import {ThemeHeadline1, ThemeHeadline2, ThemeTextLink, ThemeParagraph} from '@cocktail-helpers/base-components-mui-rne/src/components';
 
 type StaticProps = {
   title: string,

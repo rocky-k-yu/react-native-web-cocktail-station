@@ -4,7 +4,7 @@ import ThemeText from "@emma-services/common/src/shared/components/ThemeText"
 import ThemeMessageProps from "../types/ThemeMessage"
 
 
-const ThemeWarningMessage: FunctionComponent<ThemeMessageProps> = ({children, props}) => { 
+export const ThemeWarningMessage: FunctionComponent<ThemeMessageProps> = ({children, props}) => { 
     return <ThemeText textStyle={[styles.text, props && props.styles]}>
         {children}
     </ThemeText>
