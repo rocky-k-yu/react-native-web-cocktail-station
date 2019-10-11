@@ -17,7 +17,7 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
     - They are primitives to build components
 - Add storybook as third deliverable (Phoebe)
 - Move web-mobile-stitched primitives in `packages/base-components-mui-rne/src/components`
-    - Reusable namespace `@cocktail-helpers/base-components-mui-rne`
+    - Reusable namespace `@cocktail-helpers/base-components-mui-rne` 
 - Add swagger / insomnia API spec
     - Demo by swagger petstore
     - Utilize https://github.com/Manweill/swagger-axios-codegen
