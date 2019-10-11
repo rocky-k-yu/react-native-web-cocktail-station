@@ -11,6 +11,7 @@ const appIncludes = [
   resolveApp('../components/src'),
   // SERVICES
   resolveApp('../common/src'),
+  resolveApp('../base-components-mui-rne/src'),
   resolveApp('../common-identity-access-management/src'),
 
   // DEPENDENCY
