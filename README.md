@@ -23,6 +23,8 @@ This is a fork of [brunolemos/react-native-web-monorepo](https://github.com/brun
     - Utilize https://github.com/Manweill/swagger-axios-codegen
     - Fork it as `@cocktail-helpers/base-codegen-swagger-axios-ts`
 - Add /docs
+- Add typescript demo
+    - [Define actions and reducers in typescript](https://medium.com/@pie6k/better-way-to-create-type-safe-redux-actions-and-reducers-with-typescript-45386808c103)
 - Add [12factor](https://12factor.net/)
     - Build: [react-native-config](https://github.com/luggit/react-native-config)
 
