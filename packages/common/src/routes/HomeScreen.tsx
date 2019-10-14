@@ -1,16 +1,16 @@
 import React, { useContext } from 'react';
-import { Text } from 'react-native';
-import { StaticScreen, Link } from '../shared';
+import { StaticScreen } from '../shared';
 import { Store as AdminStore } from "../context/authen";
+import {ThemeTextLink} from '@cocktail-helpers/base-components-mui-rne/src/components';
 
 export default () => {
   const { state } = useContext(AdminStore);
   console.log('home', state)
   return (
-    <StaticScreen title="HomeScreen in MainApp" link="MiniApp">
-      <Link to="/"><Text>Exit</Text></Link>
+    <StaticScreen title="HomeScreen in MainApp" subtitle="Sub-HomeScreen" link="MiniApp">
+      <ThemeTextLink toPath="/">Exit</ThemeTextLink>
       {
-        !state.isAuth && <Link to="/login/"><Text>Login Mini App</Text></Link>
+        !state.isAuth && <ThemeTextLink toPath="/login/">Login Mini App</ThemeTextLink>
       }
     </StaticScreen >
   )

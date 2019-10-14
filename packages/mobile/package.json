@@ -16,6 +16,7 @@
   "dependencies": {
     "@emma-services/common": "0.0.1",
     "@emma-services/common-identity-access-management": "0.0.1",
+    "@cocktail-helpers/base-components-mui-rne": "0.0.1",
     "components": "0.0.1",
     "query-string": "^6.8.3",
     "react": "16.9.0",

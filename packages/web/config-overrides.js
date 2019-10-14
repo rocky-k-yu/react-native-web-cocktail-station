@@ -8,7 +8,13 @@ const resolveApp = relativePath => path.resolve(appDirectory, relativePath)
 // our packages that will now be included in the CRA build step
 const appIncludes = [
   resolveApp('src'),
+
+  // Example from https://github.com/brunolemos/react-native-web-monorepo
   resolveApp('../components/src'),
+
+  // Project primitive
+  resolveApp('../base-components-mui-rne/src'),
+
   // SERVICES
   resolveApp('../common/src'),
   resolveApp('../common-identity-access-management/src'),

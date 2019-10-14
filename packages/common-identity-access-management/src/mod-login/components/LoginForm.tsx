@@ -1,32 +1,32 @@
 import React from 'react';
-import { Input, Button, Text } from 'react-native-elements';
+import {ThemeTextButton, ThemeTextField, ThemeWarningMessage, ThemeErrorMessage} from '@cocktail-helpers/base-components-mui-rne/src/components';
 
 const LoginForm = (formikProps: any) => {
   const { values, handleChange, errors, setFieldTouched, touched, isValid, handleSubmit } = formikProps;
   return (
     <>
-      <Input
+      <ThemeTextField
         label="E-mail"
         placeholder="example@company.com"
-        onChangeText={handleChange('email')}
+        onChange={handleChange('email')}
         onBlur={() => setFieldTouched('email')}
       />
       {errors.email &&
-        <Text style={{ fontSize: 10, color: 'red' }}>{errors.email}</Text>
+        <ThemeWarningMessage>{errors.email}</ThemeWarningMessage>
       }
-      <Input
+      <ThemeTextField
         label="Password"
         placeholder="1234ABC"
-        onChangeText={handleChange('password')}
+        onChange={handleChange('password')}
         onBlur={() => setFieldTouched('password')}
       />
       {errors.password &&
-        <Text style={{ fontSize: 10, color: 'red' }}>{errors.password}</Text>
+        <ThemeErrorMessage>{errors.password}</ThemeErrorMessage>
       }
-      <Button
+      <ThemeTextButton
         title='Sign in'
         disabled={!isValid}
-        onPress={handleSubmit}
+        onClickOrPress={handleSubmit}
       />
     </>
   )

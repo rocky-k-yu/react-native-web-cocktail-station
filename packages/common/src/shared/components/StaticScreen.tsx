@@ -1,16 +1,15 @@
 import React, { FunctionComponent } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
-  Button
 } from 'react-native';
-import { Link } from "./Routing";
-
+import {ThemeHeadline1, ThemeHeadline2, ThemeTextLink, ThemeParagraph} from '@cocktail-helpers/base-components-mui-rne/src/components';
 
 type StaticProps = {
   title: string,
-  link?: string
+  subtitle?: string,
+  link?: string,
+  
 }
 
 /**
@@ -19,18 +18,16 @@ type StaticProps = {
  * @param link Optional link to next page of happy journey or expected auto redirect
  * @param children Optional dependency injection for component reuse
  */
-export const StaticScreen: FunctionComponent<StaticProps> = ({ title, link, children }) => {
-
+export const StaticScreen: FunctionComponent<StaticProps> = ({ title, subtitle, link, children }) => {
   return (
     <View style={styles.dummy}>
-      <Text style={styles.title}>{title || "A demo of StaticScreen"}</Text>
+      <ThemeHeadline1>{title}</ThemeHeadline1>
+      {subtitle && <ThemeHeadline2>{subtitle}</ThemeHeadline2>}
       {children}
       {link &&
-        <Link
-          to={link}>
-          <Text>{`Click to go ${link}`}</Text>
-        </Link>
+        <ThemeTextLink toPath={link} textStyle={{color:"red"}}>{`Click to go ${link}`}</ThemeTextLink>
       }
+      <ThemeParagraph>Text in theme paragraph</ThemeParagraph>
     </View>
   )
 }
@@ -42,10 +39,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center'
   },
-  title: {
-    fontSize: 30,
-    fontWeight: "200"
-  }
 })
 
 export default StaticScreen;
