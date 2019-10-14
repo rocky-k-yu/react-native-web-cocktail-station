@@ -1,13 +1,14 @@
 import React, { FunctionComponent } from 'react';
-import { Input } from 'react-native-elements';
-import ThemeTextFieldProps from '../types/ThemeTextField'
+import TextField from '@material-ui/core/TextField';
+import ThemeTextFieldProps from "../types/ThemeTextField";
 
 export const ThemeTextField: FunctionComponent<ThemeTextFieldProps> = ({label, placeholder, onChange, onBlur})=>{
     return(
-        <Input
+        <TextField
         label={label}
+        margin="dense"
         placeholder={placeholder}
-        onChangeText={onChange}
+        onChange={onChange}
         onBlur={onBlur}
       />
     )

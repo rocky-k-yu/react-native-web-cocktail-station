@@ -8,9 +8,9 @@ export default () => {
   console.log('home', state)
   return (
     <StaticScreen title="HomeScreen in MainApp" subtitle="Sub-HomeScreen" link="MiniApp">
-      <ThemeTextLink to="/">Exit</ThemeTextLink>
+      <ThemeTextLink toPath="/">Exit</ThemeTextLink>
       {
-        !state.isAuth && <ThemeTextLink to="/login/">Login Mini App</ThemeTextLink>
+        !state.isAuth && <ThemeTextLink toPath="/login/">Login Mini App</ThemeTextLink>
       }
     </StaticScreen >
   )

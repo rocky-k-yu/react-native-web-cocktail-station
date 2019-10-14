@@ -25,7 +25,7 @@ export const StaticScreen: FunctionComponent<StaticProps> = ({ title, subtitle, 
       {subtitle && <ThemeHeadline2>{subtitle}</ThemeHeadline2>}
       {children}
       {link &&
-        <ThemeTextLink to={link}>{`Click to go ${link}`}</ThemeTextLink>
+        <ThemeTextLink toPath={link} textStyle={{color:"red"}}>{`Click to go ${link}`}</ThemeTextLink>
       }
       <ThemeParagraph>Text in theme paragraph</ThemeParagraph>
     </View>

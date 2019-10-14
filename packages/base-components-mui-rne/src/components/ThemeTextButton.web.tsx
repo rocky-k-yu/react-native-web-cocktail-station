@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
 import Button from '@material-ui/core/Button';
-import ThemeTextButtonProps from '../types/ThemeTextButton';
+import ThemeTextButtonProps from "../types/ThemeTextButton";
 
 export const ThemeTextButton: FunctionComponent<ThemeTextButtonProps> = ({ disabled, onClickOrPress, title }) => {
   return (
