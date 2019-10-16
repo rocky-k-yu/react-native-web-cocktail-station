@@ -1,7 +1,7 @@
-import {StyleProp, TextStyle} from 'react-native';
+import { StyleProp, TextStyle } from "react-native";
 
 type ThemeTextProps = {
-    textStyle?: StyleProp<TextStyle>
-}
+  textStyle?: StyleProp<TextStyle>;
+};
 
-export default ThemeTextProps
+export default ThemeTextProps;

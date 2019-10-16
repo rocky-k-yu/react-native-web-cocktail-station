@@ -1,8 +1,8 @@
 type ThemeTextFieldProps = {
-    label: string
-    placeholder: string
-    onChange: any
-    onBlur: any
-}
+  label: string;
+  placeholder: string;
+  onChange: any;
+  onBlur: any;
+};
 
-export default ThemeTextFieldProps
+export default ThemeTextFieldProps;

@@ -1,21 +1,21 @@
-import { createStateContext } from '../shared/';
+import { createStateContext } from "../shared/";
 
 // Interface for reducer
-export interface IState {
+interface IState {
   isAuth: boolean;
   user: string;
 }
 
 // Interface for actions
-export interface ILogout {
+interface ILogout {
   type: "LOGOUT";
 }
 
-export interface ILogin {
+interface ILogin {
   type: "LOGIN";
 }
 
-type Actions = ILogin | ILogout;
+export type Actions = ILogin | ILogout;
 
 // Initial state
 const initialState: IState = {
@@ -34,4 +34,7 @@ const reducer = (state: IState, action: Actions) => {
 };
 
 // Exposed store and provider
-export const { Store, Provider } = createStateContext<IState, Actions>(reducer, initialState);
+export const { Store, Provider } = createStateContext<IState, Actions>(
+  reducer,
+  initialState
+);

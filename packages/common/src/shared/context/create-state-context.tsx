@@ -3,11 +3,13 @@ import React, { Dispatch, useReducer } from "react";
 /**
  * Inspired by https://dev.to/iamdammak/react-hook-usestate-with-react-context-api-3pco
  * Inspired by https://codesandbox.io/s/7jk69315l0
- * @param reducer 
- * @param initialState 
+ * @param reducer
+ * @param initialState
  */
-function createStateContextImpl<IStateType, ActionsType>(reducer: any, initialState: any): any {
-
+function createStateContextImpl<IStateType, ActionsType>(
+  reducer: any,
+  initialState: any
+): any {
   interface IContextProps {
     state: IStateType;
     dispatch: Dispatch<ActionsType>;

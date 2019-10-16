@@ -1,4 +1,4 @@
 type ThemeTextLinkProps = {
-    toPath: string
-}
-export default ThemeTextLinkProps
+  toPath: string;
+};
+export default ThemeTextLinkProps;

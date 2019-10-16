@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import { withRouter } from "react-router-dom";
-import * as yup from 'yup';
-import { Formik } from 'formik'
-import { StaticScreen } from '@emma-services/common/src/shared'
-import LoginForm from '../components/LoginForm'
-import QS from 'query-string';
+import * as yup from "yup";
+import { Formik } from "formik";
+import { StaticScreen } from "@emma-services/common/src/shared";
+import LoginForm from "../components/LoginForm";
+import QS from "query-string";
 
 const LoginValidation = yup.object().shape({
   email: yup
@@ -14,26 +14,23 @@ const LoginValidation = yup.object().shape({
   password: yup
     .string()
     .min(6)
-    .required(),
+    .required()
 });
 
 const LoginStep1 = (props: any) => {
-  console.log(props)
+  console.log(props);
   return (
-    <StaticScreen
-      title="Input Email and Password"
-      link="input-one-time-pin">
+    <StaticScreen title="Input Email and Password" link="input-one-time-pin">
       <Formik
-        initialValues={{ email: '', password: '' }}
-        onSubmit={values => props.history.push(`input-one-time-pin?${QS.stringify(values)}`)}
+        initialValues={{ email: "", password: "" }}
+        onSubmit={values =>
+          props.history.push(`input-one-time-pin?${QS.stringify(values)}`)
+        }
         validationSchema={LoginValidation}
       >
-        {
-          (formikProps: any) =>
-            <LoginForm {...formikProps} />
-        }
+        {(formikProps: any) => <LoginForm {...formikProps} />}
       </Formik>
-    </StaticScreen >
-  )
-}
+    </StaticScreen>
+  );
+};
 export default withRouter(LoginStep1);

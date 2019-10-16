@@ -1,7 +1,7 @@
 module.exports = {
   project: {
     android: {
-      sourceDir: './packages/mobile/android',
-    },
-  },
+      sourceDir: "./packages/mobile/android"
+    }
+  }
 };
